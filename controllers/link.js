@@ -23,7 +23,7 @@ router.post('/', function(req,res) {
 })
 
 router.get('/404', function(req,res) {
-  res.render("shortener/404");
+  res.render("link/404");
 })
 
 router.get('/:id', function(req,res) {
@@ -31,8 +31,8 @@ router.get('/:id', function(req,res) {
 
   db.link.find({ where: {id: id} }).then(function(data) {
     var shortUrl = req.headers.host + '/' + req.params.id;
-    res.send(req.headers.host + '/' + req.params.id);
-    // res.render("shortener/index", {url: data.get().url, hashurl: shortUrl});
+    // res.send(req.headers.host + '/' + req.params.id);
+    res.render("link/index", {url: data.get().url, hashurl: shortUrl});
   })
 })
 
