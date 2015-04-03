@@ -12,5 +12,8 @@
     "database": "shortener",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  }
+  },
+  "production": {
+    "use_env_variable": "postgres://pugnyzozkyjfok:rwEdhINvxnyYeMm3lttY2DHcqU@ec2-23-23-225-50.compute-1.amazonaws.com:5432/d3mhht20l4ksnf"
+}
 }
