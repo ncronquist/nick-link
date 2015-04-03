@@ -61,7 +61,7 @@ app.get('/links', function(req,res) {
     linksObj = {};
     links.forEach(function(link, index, array) {
       // var slinkObj = {};
-      var hash = "http://localhost:3000/" + hashids.encode(link.id);
+      var hash = req.headers.host + '/' + hashids.encode(link.id);
       link.get().hashurl = hash;
       // console.log("Link:", link.get());
       // console.log("Link ID: ", link.id);

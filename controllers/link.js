@@ -30,7 +30,7 @@ router.get('/:id', function(req,res) {
   var id = parseInt(hashids.decode(req.params.id));
 
   db.link.find({ where: {id: id} }).then(function(data) {
-    var shortUrl = "http://localhost:3000/" + req.params.id;
+    var shortUrl = req.headers.host + '/' + req.params.id;
     res.render("shortener/index", {url: data.get().url, hashurl: shortUrl});
   })
 })
