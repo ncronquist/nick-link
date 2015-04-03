@@ -74,9 +74,9 @@ app.get('/links', function(req,res) {
   })
 })
 
-app.get('/:hash', function(req,res) {
+app.get('/:hashedId', function(req,res) {
 
-  var id = parseInt(hashids.decode(req.params.hash));
+  var id = parseInt(hashids.decode(req.params.hashedId));
 
   db.link.find({ where: {id: id} }).then(function(link) {
 

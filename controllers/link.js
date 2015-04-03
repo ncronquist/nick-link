@@ -26,13 +26,13 @@ router.get('/404', function(req,res) {
   res.render("link/404");
 })
 
-router.get('/:id', function(req,res) {
-  var id = parseInt(hashids.decode(req.params.id));
+router.get('/:hashedId', function(req,res) {
+  var id = parseInt(hashids.decode(req.params.hashedId));
 
   db.link.find({ where: {id: id} }).then(function(data) {
-    var shortUrl = req.headers.host + '/' + req.params.id;
-    // res.send(req.headers.host + '/' + req.params.id);
-    res.render("link/index", {url: data.get().url, hashurl: shortUrl});
+    var shortUrl = req.headers.host + '/' + req.params.hashedId;
+    res.send("Rhh: " + req.headers.host + ' Rphid: ' + req.params.hashedId);
+    // res.render("link/index", {url: data.get().url, hashurl: shortUrl});
   })
 })
 
