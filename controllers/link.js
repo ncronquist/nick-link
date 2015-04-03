@@ -31,8 +31,8 @@ router.get('/:hashedId', function(req,res) {
 
   db.link.find({ where: {id: id} }).then(function(data) {
     var shortUrl = req.headers.host + '/' + req.params.hashedId;
-    res.send("Rhh: " + req.headers.host + ' Rphid: ' + req.params.hashedId);
-    // res.render("link/index", {url: data.get().url, hashurl: shortUrl});
+    // res.send("Rhh: " + req.headers.host + ' Rphid: ' + req.params.hashedId);
+    res.render("link/index", {url: data.get().url, hashurl: shortUrl});
   })
 })
 
