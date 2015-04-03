@@ -1,0 +1,28 @@
+ <% include ./partials/header %>
+
+<div class="container body">
+
+  <table class='table small'>
+    <tr>
+      <th>URL</th>
+      <th>Nick Link</th>
+      <th>Clicks</th>
+      <th>Created</th>
+      <th>Last Clicked</th>
+    </tr>
+
+    <% for(var key in linksObj) { %>
+      <tr>
+        <td><%= linksObj[key].url; %></td>
+        <td><%= linksObj[key].hashurl; %></td>
+        <td><%= linksObj[key].clicked; %></td>
+        <td><%= linksObj[key].createdAt; %></td>
+        <td><%= linksObj[key].updatedAt; %></td>
+      </tr>
+    <% } %>
+  </table>
+
+</div>
+
+
+ <% include ./partials/footer %>

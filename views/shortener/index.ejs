@@ -1,0 +1,16 @@
+ <% include ../partials/header %>
+
+<div class="container body text-center">
+  <table class='table'>
+    <tr>
+      <th> Original URL </th>
+      <td> <%= url %> </td>
+    </tr>
+    <tr>
+      <th> Nick Link </th>
+      <td> <a href="<%= hashurl %>"><%= hashurl %></a> </td>
+    </tr>
+  </table>
+</div>
+
+<% include ../partials/footer %>
