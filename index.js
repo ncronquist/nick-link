@@ -81,8 +81,8 @@ app.get('/:hash', function(req,res) {
   db.link.find({ where: {id: id} }).then(function(link) {
 
     link.clicked = link.clicked + 1
-    link.save().then(function() {
-      res.redirect(link.get().url);
+    link.save().then(function(link) {
+      res.redirect(link.url);
     })
   }).catch(function(error) {
       console.log('Someone hit a 404 while using link shortener');

@@ -31,7 +31,8 @@ router.get('/:id', function(req,res) {
 
   db.link.find({ where: {id: id} }).then(function(data) {
     var shortUrl = req.headers.host + '/' + req.params.id;
-    res.render("shortener/index", {url: data.get().url, hashurl: shortUrl});
+    res.send(req.headers.host + '/' + req.params.id);
+    // res.render("shortener/index", {url: data.get().url, hashurl: shortUrl});
   })
 })
 
